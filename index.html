@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,10 @@
     <meta property="twitter:creator" content="@mirmousaviii" />
 
     <meta name="theme-color" content="#667eea" />
+    
+    <!-- Prevent content hiding for SEO and headless browsers -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mo.js.org/" />
@@ -76,6 +80,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="./css/main.css" />
+    
+    <!-- Detect JavaScript support -->
+    <script>
+      // Remove no-js class if JavaScript is enabled
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
       <!-- Section Indicators -->

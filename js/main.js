@@ -236,6 +236,37 @@ function initScrollEffects() {
 // ========================================
 
 function initScrollAnimations() {
+  // Check if this is a headless browser or bot
+  const isHeadlessBrowser =
+    !window.chrome ||
+    navigator.webdriver ||
+    window.callPhantom ||
+    window._phantom ||
+    window.phantom ||
+    navigator.userAgent.includes("HeadlessChrome") ||
+    navigator.userAgent.includes("PhantomJS") ||
+    navigator.userAgent.includes("Puppeteer") ||
+    navigator.userAgent.includes("Playwright");
+
+  // If headless browser, show all content immediately
+  if (isHeadlessBrowser) {
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+    animatedElements.forEach((element) => {
+      element.classList.add("visible");
+    });
+    return;
+  }
+
+  // Check if IntersectionObserver is supported
+  if (!window.IntersectionObserver) {
+    // Fallback for browsers without IntersectionObserver
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+    animatedElements.forEach((element) => {
+      element.classList.add("visible");
+    });
+    return;
+  }
+
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",

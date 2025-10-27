@@ -19,5 +19,5 @@ Available as a NPM Package, CLI and Editor
 ## Getting Started
 
 1. Clone: `git clone git@github.com:mirmousaviii/mostage-editor.git && cd mostage-website`
-2. Serve: `python -m http.server`
+2. Serve: `python -m http.server` or `npx serve . -p 8000`
 3. Open: `http://localhost:8000`
