@@ -6,7 +6,7 @@ A responsive website for the Mostage presentation framework. Built with vanilla 
 
 Mostage is a presentation framework based on Markdown and HTML.
 
-Available as a NPM Package, CLI and Editor
+Available as a NPM Package, CLI and Web App
 
 ## Website Features
 
